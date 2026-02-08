@@ -5,9 +5,10 @@ import { BrowserRouter } from "react-router-dom";
 import App from "./App.jsx";
 import "./index.css";
 
-createRoot(document.getElementById("root")).render(
+const basename = import.meta.env.BASE_URL.replace(/\/$/, "");
 
-    <BrowserRouter basename="/CUCO_website">
-      <App />
-    </BrowserRouter>
+createRoot(document.getElementById("root")).render(
+  <BrowserRouter basename={basename}>
+    <App />
+  </BrowserRouter>
 );
