@@ -18,6 +18,11 @@ const ApplyForm = () => {
 
     const handleSubmit = async (e) => {
         e.preventDefault();
+        if (!supabase) {
+            alert("Application form is temporarily unavailable. Supabase is not configured.");
+            return;
+        }
+
         if (!name || !year || !major || !cvFile || !email) {
             alert("Please fill in all fields");
             return;
